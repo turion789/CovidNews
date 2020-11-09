@@ -26,9 +26,8 @@ class ViewControllerInTable: UIViewController {
     
     func setupCellTable(country:Country){
         self.countryTitleInCell.title = country.country
-       //self.confirmedLableInCell.text = String(country.latest.confirmed)
-        //self.deathLableInCell.text = country.latest.deaths
-        print(country.latest.deaths)
+        //self.confirmedLableInCell.text = "\(country.latest.confirmed)"
+        //self.deathLableInCell.text = "\(country.latest.deaths)"
     }
   
 

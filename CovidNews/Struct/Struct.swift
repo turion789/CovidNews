@@ -55,10 +55,12 @@ class StatisticsCovid{
     
     func setupTableView(){
 
-        let cell1 = Country(country: "RB", latest: Latest(confirmed: 1, deaths: 2))
-        let cell2 = Country(country: "R", latest: Latest(confirmed: 11, deaths: 21))
-        let cell3 = Country(country: "RB11", latest: Latest(confirmed: 211, deaths: 122))
-        self.statisticArray = [cell1,cell2,cell3]
+        let cell1 = Country(country: "Russia", latest: Latest(confirmed: 109, deaths: 2410))
+        let cell2 = Country(country: "Poland", latest: Latest(confirmed: 11, deaths: 21))
+        let cell3 = Country(country: "USA", latest: Latest(confirmed: 211, deaths: 12))
+        let cell4 = Country(country: "Azerbaijan", latest: Latest(confirmed: 211, deaths: 3222))
+        let cell5 = Country(country: "China", latest: Latest(confirmed: 21, deaths: 122))
+        self.statisticArray = [cell1,cell2,cell3,cell4,cell5]
         
     
     }

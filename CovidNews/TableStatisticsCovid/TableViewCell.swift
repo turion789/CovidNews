@@ -12,14 +12,11 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var confirmLable: UILabel!
     @IBOutlet weak var countryLable: UILabel!
     @IBOutlet weak var deathLable: UILabel!
-
-    
-    let titleCountry = UITabBarItem()
     
 
     func setupCellTable(country:Country){
-        self.countryLable.text = "Country: \(country.country)"
-        self.confirmLable.text = "Confirmed: \(country.latest.confirmed)"
+        self.countryLable.text = "\(country.country)"
+        self.confirmLable.text = "\(country.latest.confirmed)"
         self.deathLable.text = "Deaths: \(country.latest.deaths)"
     }
  
