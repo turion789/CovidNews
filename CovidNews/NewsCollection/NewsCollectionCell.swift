@@ -11,12 +11,6 @@ class NewsCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var authorNews: UILabel!
     @IBOutlet weak var titleNews: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
 
     
     func setupCell(article:Article){

@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate {
+class FirstViewController: UIViewController,UITextFieldDelegate {
 
+
+
+ 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -61,9 +64,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         viewPassword.addSubview(imageViewPassword)
         passwordTextField.leftViewMode = UITextField.ViewMode.always
         passwordTextField.leftView = viewPassword
-  
+      
     }
-    
     
     func buttonCustom(){
         
@@ -76,44 +78,36 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
     }
 
-
     @IBAction func textFieldValueChanged(_ sender: Any){
-
-            if loginTextField.text != nil && passwordTextField.text != nil {
-                loginButton.isEnabled = true
-               
-            } else {
-                
-                loginButton.isEnabled = false
-
-          }
-           
+        
+        if loginTextField.text != nil && passwordTextField.text != nil {
+            
+            return loginButton.isEnabled = true
+            
+        } else {
+            
+            return loginButton.isEnabled = false
+            
+      }
+        
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-
+     
+    override func viewWillAppear(_ animated: Bool) {
+        
+      super.viewWillAppear(animated)
         loginTextField.text! = ""
         passwordTextField.text! = ""
-
+        loginButton.isEnabled = false
+        
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-  
-    }
-    
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
- 
          textFieldCustom()
          buttonCustom()
          loginButton.isEnabled = false
-
+       
     }
 
 }

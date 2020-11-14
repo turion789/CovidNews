@@ -14,24 +14,10 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var deathLable: UILabel!
     
 
-    func setupCellTable(country:Country){
-        self.countryLable.text = "\(country.country)"
-        self.confirmLable.text = "\(country.latest.confirmed)"
-        self.deathLable.text = "Deaths: \(country.latest.deaths)"
-    }
+//    func setupCellTable(country:Case){
+//        self.countryLable.text = country.country
+//        //self.confirmLable.text = "\(String(describing: country.infected))"
+//       // self.deathLable.text = "Deaths: \(String(describing: country.recovered))"
+//    }
  
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-
 }
