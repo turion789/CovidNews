@@ -226,6 +226,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="4od-JE-18r">
                         <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <connections>
+                            <action selector="refreshControl:" destination="4AK-FD-Unr" eventType="valueChanged" id="J31-3r-eDH"/>
+                        </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-Cp-j50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

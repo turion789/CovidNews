@@ -6,34 +6,28 @@
 //
 
 import UIKit
-
 class TableViewController: UITableViewController {
     
     var timer: Timer!
     var casesss = [Case]()
     let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true")
     
+    @IBAction func refreshControl(_ sender: UIRefreshControl) {
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJSON()
-        let refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = .white
-        refreshControl.tintColor = .red
-        tableView.refreshControl = refreshControl
-        doSomething()
     }
-    
-    
-    func doSomething() {
-        downloadJSON()
-        self.tableView.reloadData()
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
-    }
-    
     
     @objc func endOfWork() {
-        refreshControl!.endRefreshing()
+        downloadJSON()
+        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+           }
         timer.invalidate()
         timer = nil
     }

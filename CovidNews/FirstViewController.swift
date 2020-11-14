@@ -19,6 +19,7 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         
         login = loginTextField.text!
         redirectionLogo = login
+
         
     }
     
