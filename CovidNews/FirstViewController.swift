@@ -24,6 +24,7 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     }
     
     var login = ""
+    
 
     func textFieldCustom(){
         
@@ -45,6 +46,33 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         view.addSubview(imageView)
         loginTextField.leftViewMode = UITextField.ViewMode.always
         loginTextField.leftView = view
+        
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.loginTextField.center.y -= 1000
+        }, completion: { _ in
+        })
+        
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.6,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.passwordTextField.center.y -= 1000
+        }, completion: { _ in
+        })
+        
+        
+        UIView.animate(withDuration: 0.8,
+                       delay: 0.4,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.loginButton.center.y -= 1000
+        }, completion: { _ in
+        })
         
         
         passwordTextField.backgroundColor = .black
@@ -102,13 +130,39 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-         textFieldCustom()
-         buttonCustom()
-         loginButton.isEnabled = false
-       
+        
+        textFieldCustom()
+        buttonCustom()
+        loginButton.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+
+        @objc func keyboardWillShow(notification: NSNotification) {
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0 {
+                    self.loginButton.center.y -= keyboardSize.height
+                }
+            }
+        }
+
+        @objc func keyboardWillHide(notification: NSNotification) {
+            if self.view.frame.origin.y != 0 {
+                self.loginButton.center.y = 0
+            }
+
+
     }
 
 }
