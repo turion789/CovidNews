@@ -14,13 +14,13 @@ class LogoOutViewController: UIViewController{
     
     @IBOutlet weak var userNameLable: UILabel!
     @IBOutlet weak var customLogOut: UIButton!
-    @IBAction func logOutButton(_ sender: Any) {
+    //@IBAction func logOutButton(_ sender: Any) {
         
         
 
-        _ = navigationController?.popToRootViewController(animated: true)
+       // _ = navigationController?.popToRootViewController(animated: true)
   
-    }
+    //}
     
     func custamButtonLogOut(){
 //        customLogOut.backgroundColor = .black
@@ -39,5 +39,7 @@ class LogoOutViewController: UIViewController{
         custamButtonLogOut()
         userNameLable.text! = redirectionLogo
     }
+    
+    
     
 }

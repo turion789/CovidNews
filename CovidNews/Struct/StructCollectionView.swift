@@ -15,13 +15,13 @@ struct Article: Codable {
 }
 
 class News{
-    
+
     var newsArray = [Article]()
-    
+
     init() {
         setupCollectionView()
     }
-    
+
     func setupCollectionView(){
         let news1 = Article(author: "Vasia", title: "Опасно")
         let news2 = Article(author: "Петя", title: "Опасно")
@@ -31,3 +31,28 @@ class News{
     }
 }
 
+
+//import Foundation
+//
+//// MARK: - Welcome
+//struct Welcome {
+//    let status: String
+//    let totalResults: Int
+//    let articles: [Article]
+//}
+//
+//// MARK: - Article
+//struct Article {
+//    let source: Source
+//    let author, title, articleDescription: String
+//    let url: String
+//    let urlToImage: String
+//    let publishedAt: Date
+//    let content: String
+//}
+//
+//// MARK: - Source
+//struct Source {
+//    let id: String?
+//    let name: String
+//}

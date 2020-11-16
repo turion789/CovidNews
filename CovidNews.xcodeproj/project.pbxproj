@@ -22,6 +22,8 @@
 		DA1A8DEF2553144F00B6724F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1A8DED2553144F00B6724F /* LaunchScreen.storyboard */; };
 		DA30DE93256067540013BB1B /* StructCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE92256067540013BB1B /* StructCollectionView.swift */; };
 		DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE95256067640013BB1B /* StructTableNews.swift */; };
+		DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */; };
+		DAA970BC25627A60003879B7 /* SaveUserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA970BB25627A60003879B7 /* SaveUserName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		DA1A8DF02553144F00B6724F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA30DE92256067540013BB1B /* StructCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCollectionView.swift; sourceTree = "<group>"; };
 		DA30DE95256067640013BB1B /* StructTableNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTableNews.swift; sourceTree = "<group>"; };
+		DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
+		DAA970BB25627A60003879B7 /* SaveUserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				DA174B722554153400D7971D /* NewsViewController.swift */,
+				DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */,
 				DA174B7A255415BA00D7971D /* NewsCollectionCell.swift */,
 				DA174B7B255415BA00D7971D /* NewsCollectionCell.xib */,
 			);
@@ -70,6 +75,7 @@
 			children = (
 				DA30DE92256067540013BB1B /* StructCollectionView.swift */,
 				DA30DE95256067640013BB1B /* StructTableNews.swift */,
+				DAA970BB25627A60003879B7 /* SaveUserName.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -192,7 +198,9 @@
 				DA30DE93256067540013BB1B /* StructCollectionView.swift in Sources */,
 				DA1A8DE72553144E00B6724F /* FirstViewController.swift in Sources */,
 				DA174B742554153400D7971D /* NewsViewController.swift in Sources */,
+				DAA970BC25627A60003879B7 /* SaveUserName.swift in Sources */,
 				DA174B8E2554277600D7971D /* TableViewController.swift in Sources */,
+				DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */,
 				DA1A8DE32553144E00B6724F /* AppDelegate.swift in Sources */,
 				DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */,
 				DA174B7C255415BA00D7971D /* NewsCollectionCell.swift in Sources */,

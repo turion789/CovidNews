@@ -7,11 +7,29 @@
 
 import UIKit
 
+
+class UserModel: NSObject, NSCoding {
+    
+    let loginName:String
+    init(loginName: String) {
+        self.loginName = loginName
+        
+    }
+    func encode(with coder: NSCoder) {
+        coder.encode(loginName, forKey: "loginName")
+        
+    }
+       required init?(coder: NSCoder) {
+        loginName = coder.decodeObject(forKey: "loginName") as? String ?? ""
+        
+       }
+}
+
+
+
+
 class FirstViewController: UIViewController,UITextFieldDelegate {
 
-
-
- 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -19,13 +37,15 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         
         login = loginTextField.text!
         redirectionLogo = login
-
-        
+        let nameLoginIn = loginTextField.text!.trimmingCharacters(in: .whitespaces)
+        let userObject = UserModel(loginName: nameLoginIn)
+        UserSettings.userName = nameLoginIn
+        UserSettings.userModel = userObject
     }
     
     var login = ""
+ 
     
-
     func textFieldCustom(){
         
         loginTextField.backgroundColor = .black
@@ -109,7 +129,7 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
 
     @IBAction func textFieldValueChanged(_ sender: Any){
         
-        if loginTextField.text != nil && passwordTextField.text != nil {
+        if passwordTextField.text != nil && loginTextField.text != nil {
             
             return loginButton.isEnabled = true
             
@@ -124,9 +144,8 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
       super.viewWillAppear(animated)
-        loginTextField.text! = ""
-        passwordTextField.text! = ""
-        loginButton.isEnabled = false
+        
+        
         
     }
     
@@ -138,34 +157,45 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+ 
+
+        loginTextField.text = UserSettings.userModel.loginName
         textFieldCustom()
         buttonCustom()
         loginButton.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-        @objc func keyboardWillShow(notification: NSNotification) {
-            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                if self.view.frame.origin.y == 0 {
-                    self.loginButton.center.y -= keyboardSize.height
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.loginButton.center.y -= keyboardSize.height
                 }
             }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.loginButton.center.y = 0
         }
 
-        @objc func keyboardWillHide(notification: NSNotification) {
-            if self.view.frame.origin.y != 0 {
-                self.loginButton.center.y = 0
-            }
 
+    }
+    @IBAction func logOut(segue: UIStoryboardSegue) {
+        
+        
+        loginTextField.text = UserSettings.userModel.loginName
+        //loginTextField.text! = ""
+        passwordTextField.text! = ""
+        loginButton.isEnabled = false
 
     }
 
 }
+
 
 
 

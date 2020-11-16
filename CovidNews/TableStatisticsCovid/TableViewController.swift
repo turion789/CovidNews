@@ -63,7 +63,7 @@ class TableViewController: UITableViewController {
 
         cell.countryLable.text = casesss[indexPath.row].country
         cell.confirmLable.text = String(casesss[indexPath.row].infected!)
-        cell.deathLable.text = String(casesss[indexPath.row].recovered ?? 0)
+        cell.deathLable.text = String(casesss[indexPath.row].recovered!)
 //      print(String(casesss[indexPath.row].infected!))
         return cell
     }
@@ -83,8 +83,12 @@ class TableViewController: UITableViewController {
             
             let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
             let detailVC: ViewControllerInTable = segue.destination as! ViewControllerInTable
-            let statisticsCovidVar = casesss[indexPath?.row ?? 0]
-            detailVC.setupCellTable(country: statisticsCovidVar)
+            detailVC.confirmedCell += String(casesss[indexPath!.row].infected!)
+            detailVC.countryTitleInCell.title = casesss[indexPath!.row].country
+            detailVC.deathCell += String(casesss[indexPath!.row].recovered!)
+            //detailVC.confirmedCell
+//            let statisticsCovidVar = casesss[indexPath?.row ?? 0]
+//            detailVC.setupCellTable(country: statisticsCovidVar)
          }
     }
     

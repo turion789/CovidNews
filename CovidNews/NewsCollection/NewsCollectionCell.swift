@@ -17,4 +17,5 @@ class NewsCollectionCell: UICollectionViewCell {
         self.titleNews.text = article.title
         self.authorNews.text = article.author
     }
+    
 }
