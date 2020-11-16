@@ -33,10 +33,10 @@ struct Case:Decodable  {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         country = try container.decode(String.self, forKey: .country)
         infected = try? container.decode(Int.self, forKey: .infected)
-        recovered = try? container.decode(Int.self, forKey: .recovered)
-//        let recoveredInt = try? container.decode(Int.self, forKey: .recovered)
-//        let recoveredString = try? container.decode(String.self, forKey: .recovered)
-//        self.recovered = recoveredInt ?? (recoveredString == "N/A" ? 00:00)
+       // recovered = try? container.decode(Int.self, forKey: .recovered)
+        let recoveredInt = try? container.decode(Int.self, forKey: .recovered)
+        let recoveredString = try? container.decode(String.self, forKey: .recovered)
+        self.recovered = recoveredInt ?? (recoveredString == "N/A" ? 00:00)
       }
 }
 
