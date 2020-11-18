@@ -41,6 +41,7 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         let userObject = UserModel(loginName: nameLoginIn)
         UserSettings.userName = nameLoginIn
         UserSettings.userModel = userObject
+       
     }
     
     var login = ""

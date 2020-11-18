@@ -9,50 +9,57 @@ import Foundation
 import UIKit
 
 
-struct Article: Codable {
-    let author: String
+//https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=a6dbb9693ad24a18a56e0e881cd47c09
+
+struct Welcome:Decodable {
+    let status: String
+    let totalResults: Int
+    let articles: [Article]
+}
+
+// MARK: - Article
+struct Article:Decodable {
+    let source: Source
+    let author: String?
     let title: String
+    let articleDescription: String?
+    let url: String
+    let urlToImage: String?
+    let publishedAt: Date
+    let content: String?
 }
 
-class News{
-
-    var newsArray = [Article]()
-
-    init() {
-        setupCollectionView()
-    }
-
-    func setupCollectionView(){
-        let news1 = Article(author: "Vasia", title: "Опасно")
-        let news2 = Article(author: "Петя", title: "Опасно")
-        let news3 = Article(author: "Ира", title: "Опасно")
-        let news4 = Article(author: "Валера", title: "Опасно")
-        self.newsArray = [news1,news2,news3,news4]
-    }
+// MARK: - Source
+struct Source:Decodable {
+    let id: String?
+    let name: String
 }
 
 
-//import Foundation
+// MARK: - Article
+//struct Article: Decodable {
+//    var author:String
+//    let title: String
+//    let url: URL
+//    let urlToImage: URL
 //
-//// MARK: - Welcome
-//struct Welcome {
-//    let status: String
-//    let totalResults: Int
-//    let articles: [Article]
-//}
+//    enum CodingKeyNews:String, CodingKey {
+//        case author, title, url, urlToImage
+//    }
+//    init(author:String, title: String, url: URL, urlToImage: URL) {
+//        self.author = author
+//        self.title = title
+//        self.url = url
+//        self.urlToImage = urlToImage
+//    }
 //
-//// MARK: - Article
-//struct Article {
-//    let source: Source
-//    let author, title, articleDescription: String
-//    let url: String
-//    let urlToImage: String
-//    let publishedAt: Date
-//    let content: String
-//}
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeyNews.self)
+//        author = try container.decode(String.self, forKey: .author)
+//        title = try container.decode(String.self, forKey: .title)
+//        url = try container.decode(URL.self, forKey: .url)
+//        urlToImage = try container.decode(URL.self, forKey: .urlToImage)
 //
-//// MARK: - Source
-//struct Source {
-//    let id: String?
-//    let name: String
+//    }
 //}
+

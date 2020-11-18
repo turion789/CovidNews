@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57708B82957C79E4F8F5F5FC /* Pods_CovidNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869A0815C1C8AC028C6845F3 /* Pods_CovidNews.framework */; };
 		DA174B742554153400D7971D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA174B722554153400D7971D /* NewsViewController.swift */; };
 		DA174B7C255415BA00D7971D /* NewsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA174B7A255415BA00D7971D /* NewsCollectionCell.swift */; };
 		DA174B7D255415BA00D7971D /* NewsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA174B7B255415BA00D7971D /* NewsCollectionCell.xib */; };
@@ -24,9 +25,13 @@
 		DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE95256067640013BB1B /* StructTableNews.swift */; };
 		DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */; };
 		DAA970BC25627A60003879B7 /* SaveUserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA970BB25627A60003879B7 /* SaveUserName.swift */; };
+		DAC5BF4C2565589800991F51 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5BF4B2565589800991F51 /* tabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EB6C09D83A1F2D0D2B4764C /* Pods-CovidNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidNews.release.xcconfig"; path = "Target Support Files/Pods-CovidNews/Pods-CovidNews.release.xcconfig"; sourceTree = "<group>"; };
+		869A0815C1C8AC028C6845F3 /* Pods_CovidNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5EFADA387FFA2CDBFD2EEC /* Pods-CovidNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidNews.debug.xcconfig"; path = "Target Support Files/Pods-CovidNews/Pods-CovidNews.debug.xcconfig"; sourceTree = "<group>"; };
 		DA174B722554153400D7971D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DA174B7A255415BA00D7971D /* NewsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionCell.swift; sourceTree = "<group>"; };
 		DA174B7B255415BA00D7971D /* NewsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionCell.xib; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		DA30DE95256067640013BB1B /* StructTableNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTableNews.swift; sourceTree = "<group>"; };
 		DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
 		DAA970BB25627A60003879B7 /* SaveUserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserName.swift; sourceTree = "<group>"; };
+		DAC5BF4B2565589800991F51 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,18 +59,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57708B82957C79E4F8F5F5FC /* Pods_CovidNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0455F48B58EC2676ED83F487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C5EFADA387FFA2CDBFD2EEC /* Pods-CovidNews.debug.xcconfig */,
+				4EB6C09D83A1F2D0D2B4764C /* Pods-CovidNews.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1251AB37C1C752206BE8B283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				869A0815C1C8AC028C6845F3 /* Pods_CovidNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA174B772554154200D7971D /* NewsCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DA174B7A255415BA00D7971D /* NewsCollectionCell.swift */,
 				DA174B722554153400D7971D /* NewsViewController.swift */,
 				DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */,
-				DA174B7A255415BA00D7971D /* NewsCollectionCell.swift */,
 				DA174B7B255415BA00D7971D /* NewsCollectionCell.xib */,
 			);
 			path = NewsCollection;
@@ -95,6 +119,8 @@
 			children = (
 				DA1A8DE12553144E00B6724F /* CovidNews */,
 				DA1A8DE02553144E00B6724F /* Products */,
+				0455F48B58EC2676ED83F487 /* Pods */,
+				1251AB37C1C752206BE8B283 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +138,7 @@
 				DA1A8DE22553144E00B6724F /* AppDelegate.swift */,
 				DA1A8DE42553144E00B6724F /* SceneDelegate.swift */,
 				DA1A8DE82553144E00B6724F /* Main.storyboard */,
+				DAC5BF4B2565589800991F51 /* tabBarViewController.swift */,
 				DA174B902554277C00D7971D /* TableStatisticsCovid */,
 				DA174B772554154200D7971D /* NewsCollection */,
 				DA174B8425541F3500D7971D /* Struct */,
@@ -131,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA1A8DF32553144F00B6724F /* Build configuration list for PBXNativeTarget "CovidNews" */;
 			buildPhases = (
+				BA87F31C7C9AF4DAA537BDD0 /* [CP] Check Pods Manifest.lock */,
 				DA1A8DDB2553144E00B6724F /* Sources */,
 				DA1A8DDC2553144E00B6724F /* Frameworks */,
 				DA1A8DDD2553144E00B6724F /* Resources */,
+				B9E4DE12228BE9949DDF4ADF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +219,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B9E4DE12228BE9949DDF4ADF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidNews/Pods-CovidNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CovidNews/Pods-CovidNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CovidNews/Pods-CovidNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA87F31C7C9AF4DAA537BDD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CovidNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA1A8DDB2553144E00B6724F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,6 +276,7 @@
 				DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */,
 				DA174B7C255415BA00D7971D /* NewsCollectionCell.swift in Sources */,
 				DA174B8B2554275000D7971D /* TableViewCell.swift in Sources */,
+				DAC5BF4C2565589800991F51 /* tabBarViewController.swift in Sources */,
 				DA174B9825542C6300D7971D /* LogoOutViewController.swift in Sources */,
 				DA174B9B25543AA000D7971D /* ViewControllerInTable.swift in Sources */,
 				DA1A8DE52553144E00B6724F /* SceneDelegate.swift in Sources */,
@@ -351,6 +423,7 @@
 		};
 		DA1A8DF42553144F00B6724F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C5EFADA387FFA2CDBFD2EEC /* Pods-CovidNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,6 +443,7 @@
 		};
 		DA1A8DF52553144F00B6724F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB6C09D83A1F2D0D2B4764C /* Pods-CovidNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
