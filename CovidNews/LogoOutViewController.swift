@@ -20,7 +20,7 @@ class LogoOutViewController: UIViewController{
 
        // _ = navigationController?.popToRootViewController(animated: true)
   
-    //}
+
     
     func custamButtonLogOut(){
 //        customLogOut.backgroundColor = .black

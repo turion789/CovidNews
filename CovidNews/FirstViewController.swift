@@ -26,8 +26,6 @@ class UserModel: NSObject, NSCoding {
 }
 
 
-
-
 class FirstViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -35,8 +33,8 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginButtonGO(_ sender: UIButton) {
         
-        login = loginTextField.text!
-        redirectionLogo = login
+        //login = loginTextField.text!
+        redirectionLogo = loginTextField.text!
         let nameLoginIn = loginTextField.text!.trimmingCharacters(in: .whitespaces)
         let userObject = UserModel(loginName: nameLoginIn)
         UserSettings.userName = nameLoginIn
@@ -44,7 +42,7 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
        
     }
     
-    var login = ""
+    //var login = ""
  
     
     func textFieldCustom(){
@@ -160,7 +158,8 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-
+        loginTextField.delegate = self
+        loginTextField.becomeFirstResponder()
         loginTextField.text = UserSettings.userModel.loginName
         textFieldCustom()
         buttonCustom()
@@ -189,8 +188,9 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         
         
         loginTextField.text = UserSettings.userModel.loginName
-        //loginTextField.text! = ""
         passwordTextField.text! = ""
+        loginTextField.delegate = self
+        loginTextField.becomeFirstResponder()
         loginButton.isEnabled = false
 
     }

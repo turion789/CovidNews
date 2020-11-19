@@ -12,7 +12,7 @@ class tabBarViewController: UITabBarController {
     @IBOutlet weak var tabBarCustam: UITabBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarCustam.barStyle = .black
+        //tabBarCustam.barStyle = .black
 //        tabBarCustam.layer.borderColor = UIColor.cyan.cgColor
 
         // Do any additional setup after loading the view.

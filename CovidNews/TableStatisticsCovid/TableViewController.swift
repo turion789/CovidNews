@@ -65,7 +65,12 @@ class TableViewController: UITableViewController {
 
         cell.countryLable.text = casesss[indexPath.row].country
         cell.confirmLable.text = String("Infected: \(casesss[indexPath.row].infected!)")
-        cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered!)")
+        if casesss[indexPath.row].recovered! == 0{
+            cell.deathLable.text = "N/A"
+        }else{
+            cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered!)")
+        }
+        //cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered!)")
 //      print(String(casesss[indexPath.row].infected!))
         //loginTextField.layer.cornerRadius = 9
         //cell.flagCountryImageView.layer.cornerRadius = cell.flagCountryImageView.frame.size.width / 2
