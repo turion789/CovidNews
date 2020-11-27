@@ -8,28 +8,36 @@
 import Foundation
 import UIKit
 import WebKit
-var urlNews2222 = ""
+
 
 class DetailNewsViewController: UIViewController, UIWebViewDelegate, WKUIDelegate{
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var lable:UILabel!
-    
+    var myURL = ""
     override func loadView() {
-           
-            let webConfiguration = WKWebViewConfiguration()
-            webView = WKWebView(frame: .zero, configuration: webConfiguration)
-            webView.uiDelegate = self
-            view = webView
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+        
+    }
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        myURL.insert("s", at: myURL.index(myURL.startIndex, offsetBy: 4))
+        let url = URL(string: myURL)
+        let myRequest = URLRequest(url: url!)
+        webView.load(myRequest)
+        
+    }
+    override var hidesBottomBarWhenPushed: Bool {
+        get {
+            return navigationController?.topViewController == self
         }
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            //let url = lable.text
-            //print(lable.text!)
-            let myURL = URL(string: "https://www.bbc.co.uk/news/live/world-54998339")
-
-            let myRequest = URLRequest(url: myURL!)
-            webView.load(myRequest)
+        set {
+            super.hidesBottomBarWhenPushed = newValue
+            
         }
+        
+    }
     
 }
 

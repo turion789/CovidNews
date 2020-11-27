@@ -24,14 +24,7 @@ class ViewControllerInTable: UIViewController {
         deathLableInCell.text = String(deathCell)
         
     }
-    
-    //func setupCellTable(country:Case){
-//        let deathCell = "Recovered: + \(String(country.recovered ?? 0))"
-//        let confirmedCell = "Infected: + \(String(country.infected!))"
-//        countryTitleInCell.title = country.country
-//        confirmedLableInCell.text = confirmedCell
-//        deathLableInCell.text = String(deathCell)
-    //}
+
   
     override var hidesBottomBarWhenPushed: Bool {
         get {

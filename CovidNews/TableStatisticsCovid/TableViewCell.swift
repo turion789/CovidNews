@@ -47,7 +47,7 @@ class TableViewCell: UITableViewCell {
         }
     
     func formatCell() {
-        //confirmLable.textColor = .black
+
         let confirmLable = UILabel(frame: .zero)
         confirmLable.translatesAutoresizingMaskIntoConstraints = false
         confirmLable.textColor = .cyan
@@ -59,17 +59,6 @@ class TableViewCell: UITableViewCell {
         self.confirmLable.textColor = .white
         }
     
-    
 
-    
-    
-    
-//    private let productNameLabel : UILabel = {
-//     let lbl = UILabel()
-//     lbl.textColor = .black
-//     lbl.font = UIFont.boldSystemFont(ofSize: 16)
-//     lbl.textAlignment = .left
-//     return lbl
-//     }()
  
 }

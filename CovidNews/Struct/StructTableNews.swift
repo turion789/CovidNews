@@ -9,36 +9,34 @@ import Foundation
 import UIKit
 
 
-
-
-struct Case:Decodable  {
-    var country:String
-    var infected: Int?
-    var recovered: Int?
-    
+struct COVID:Decodable {
+    let countryRegion: String
+    let provinceState: String?
+    let confirmed, recovered, deaths: Int
     
     enum CodingKeys: String, CodingKey {
-        case country,infected,recovered
+        case countryRegion,provinceState,confirmed,recovered,deaths
+        
     }
-
-
-    init(country: String, infected: Int? = nil, recovered: Int? = nil) {
-        self.country = country
-        self.infected = infected
+    
+    init(countryRegion: String, provinceState: String?, confirmed:Int, recovered: Int, deaths: Int) {
+        self.countryRegion = countryRegion
+        self.provinceState = provinceState
+        self.confirmed = confirmed
         self.recovered = recovered
-
+        self.deaths = deaths
+        
     }
-
-      init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        country = try container.decode(String.self, forKey: .country)
-        infected = try? container.decode(Int.self, forKey: .infected)
-       // recovered = try? container.decode(Int.self, forKey: .recovered)
-        let recoveredInt = try? container.decode(Int.self, forKey: .recovered)
-        let recoveredString = try? container.decode(String.self, forKey: .recovered)
-        self.recovered = recoveredInt ?? (recoveredString == "N/A" ? 00:00)
-      }
+        countryRegion = try container.decode(String.self, forKey: .countryRegion)
+        provinceState = try? container.decode(String.self, forKey: .provinceState)
+        confirmed = try! container.decode(Int.self, forKey: .confirmed)
+        recovered = try! container.decode(Int.self, forKey: .recovered)
+        deaths = try! container.decode(Int.self, forKey: .deaths)
+        
+    }
+    
 }
-
-
-
+    

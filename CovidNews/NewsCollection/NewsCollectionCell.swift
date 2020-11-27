@@ -13,10 +13,7 @@ class NewsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var authorNews: UILabel!
     @IBOutlet weak var titleNews: UILabel!
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var urlNews: UILabel!
 
-
-    
-    
+  
 }
 

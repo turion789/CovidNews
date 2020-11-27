@@ -9,11 +9,11 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var timer: Timer!
-    var casesss = [Case]()
-    let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true")
+    var casesss = [COVID]()
+    let url = URL(string: "https://covid19.mathdro.id/api/confirmed")
     
     @IBAction func refreshControl(_ sender: UIRefreshControl) {
-        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
     
     }
     
@@ -25,11 +25,11 @@ class TableViewController: UITableViewController {
     @objc func endOfWork() {
         downloadJSON()
         tableView.reloadData()
-        DispatchQueue.main.async {
-            self.tableView.refreshControl?.endRefreshing()
-           }
         timer.invalidate()
         timer = nil
+        DispatchQueue.main.async {
+        self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     
@@ -42,11 +42,21 @@ class TableViewController: UITableViewController {
             }
             do{
                 let decoder = JSONDecoder()
-                let downloaderCase = try decoder.decode([Case].self, from: data)
+                let downloaderCase = try decoder.decode([COVID].self, from: data)
                 print("количество строк - \(downloaderCase.count)")
                 self.casesss = downloaderCase
-                DispatchQueue.main.async {self.tableView.reloadData()}
+                
+                
+                
+                if self.casesss.count != 0 {
+                    DispatchQueue.main.async{
+                        self.tableView.reloadData()
+                    }
+
+                }
+               
             }catch{
+                
                 print("download_Static")
             }
     }.resume()
@@ -62,28 +72,29 @@ class TableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
-
-        cell.countryLable.text = casesss[indexPath.row].country
-        cell.confirmLable.text = String("Infected: \(casesss[indexPath.row].infected!)")
-        if casesss[indexPath.row].recovered! == 0{
+        
+        if casesss[indexPath.row].provinceState == nil{
+            cell.countryLable.text = casesss[indexPath.row].countryRegion
+        }else{
+            let cas: String = casesss[indexPath.row].provinceState ?? casesss[indexPath.row].countryRegion
+            cell.countryLable.text = cas + " / " + casesss[indexPath.row].countryRegion
+        }
+        
+        cell.confirmLable.text = String("Infected: \(casesss[indexPath.row].confirmed)")
+        if casesss[indexPath.row].recovered == 0{
             cell.deathLable.text = "N/A"
         }else{
-            cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered!)")
+            cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered)")
         }
-        //cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered!)")
-//      print(String(casesss[indexPath.row].infected!))
-        //loginTextField.layer.cornerRadius = 9
-        //cell.flagCountryImageView.layer.cornerRadius = cell.flagCountryImageView.frame.size.width / 2
+
         cell.layer.cornerRadius = 50
-        cell.backgroundColor = .white
+        cell.backgroundColor = .systemGray6
         cell.layer.borderWidth = 10
         cell.layer.borderColor = UIColor.systemGray5.cgColor
         cell.separatorInset.bottom = 10
         cell.layoutMargins.top = 10
 
-        //cell.clipsToBounds = true
-        
-        cell.flagCountryImageView.image = UIImage(named: casesss[indexPath.row].country)
+        cell.flagCountryImageView.image = UIImage(named: casesss[indexPath.row].countryRegion)
         cell.deathLable.textColor = .red
         
         return cell
@@ -103,12 +114,12 @@ class TableViewController: UITableViewController {
             
             let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
             let detailVC: ViewControllerInTable = segue.destination as! ViewControllerInTable
-            detailVC.confirmedCell += String(casesss[indexPath!.row].infected!)
-            detailVC.countryTitleInCell.title = casesss[indexPath!.row].country
-            detailVC.deathCell += String(casesss[indexPath!.row].recovered!)
-            //detailVC.confirmedCell
-//            let statisticsCovidVar = casesss[indexPath?.row ?? 0]
-//            detailVC.setupCellTable(country: statisticsCovidVar)
+            detailVC.confirmedCell += String(casesss[indexPath!.row].confirmed)
+            if casesss[indexPath!.row].recovered == 0{
+                detailVC.deathCell += "N/A"
+            }else{detailVC.deathCell += String(casesss[indexPath!.row].recovered)}
+            detailVC.countryTitleInCell.title = casesss[indexPath!.row].countryRegion
+
          }
     }
     
