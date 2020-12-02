@@ -1,0 +1,60 @@
+/* Class = "UINavigationItem"; title = "Cases"; ObjectID = "0K0-yc-qeO"; */
+"0K0-yc-qeO.title" = "Статистика";
+
+/* Class = "UILabel"; text = "Recovered"; ObjectID = "2Su-uH-KEO"; */
+"2Su-uH-KEO.text" = "Выздоровевшие";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "8eZ-gx-R6N"; */
+"8eZ-gx-R6N.title" = "Title";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "AbN-ga-QoK"; */
+"AbN-ga-QoK.title" = "Новости";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "cGM-IB-uWS"; */
+"cGM-IB-uWS.text" = "Страна";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "CL7-PZ-5A2"; */
+"CL7-PZ-5A2.placeholder" = "Имя пользователя";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "dn8-EA-Nf1"; */
+"dn8-EA-Nf1.normalTitle" = "Вход";
+
+/* Class = "UITabBarItem"; title = "Cases"; ObjectID = "hY1-FV-akU"; */
+"hY1-FV-akU.title" = "Статистика";
+
+/* Class = "UILabel"; text = "Recovered"; ObjectID = "Jm0-GH-pjY"; */
+"Jm0-GH-pjY.text" = "Выздоровевшие";
+
+/* Class = "UILabel"; text = "COVID - 19"; ObjectID = "mJ4-qb-wGw"; */
+"mJ4-qb-wGw.text" = "COVID - 19";
+
+/* Class = "UILabel"; text = "Confirm"; ObjectID = "mTd-aV-YMX"; */
+"mTd-aV-YMX.text" = "Заболевшие";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "o7y-0d-Zaz"; */
+"o7y-0d-Zaz.title" = "Профиль";
+
+/* Class = "UIViewController"; title = "News"; ObjectID = "oJ6-QY-myU"; */
+"oJ6-QY-myU.title" = "Новости";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "oOr-sq-P4R"; */
+"oOr-sq-P4R.placeholder" = "Пароль";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Pd3-8S-EnZ"; */
+"Pd3-8S-EnZ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "LogOut"; ObjectID = "R42-dt-v9Q"; */
+"R42-dt-v9Q.normalTitle" = "Выход";
+
+/* Class = "UILabel"; text = "Confirmed: 10"; ObjectID = "SKe-K2-pjx"; */
+"SKe-K2-pjx.text" = "Заболевшие:";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "sRd-Lp-XZE"; */
+"sRd-Lp-XZE.title" = "Новости";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZCM-8B-OwW"; */
+"ZCM-8B-OwW.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zxG-Wa-L24"; */
+"zxG-Wa-L24.text" = "Label";
+

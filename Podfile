@@ -5,4 +5,5 @@ target 'CovidNews' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'PromiseKit'
     pod 'Alamofire'
+    pod 'KeychainAccess'
 end

@@ -117,17 +117,15 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         
     }
 
-    @IBAction func textFieldValueChanged(_ sender: Any){
-        if  passwordTextField.text == nil{
-            return loginButton.isEnabled = false
-            
-        } else {
-            
+
+    
+    @IBAction func textFieldEditing(_ textField: UITextField){
+        if  ((passwordTextField.text?.count ?? 0) > 0) && loginTextField.text?.count ?? 0 > 0{
             return loginButton.isEnabled = true
             
         }
-        
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

@@ -29,7 +29,7 @@ class NewsViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.refreshControl = myRefrashControl
-        navigationItem.title = "News"
+        navigationItem.title = tabBarItem.title
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.DATA()

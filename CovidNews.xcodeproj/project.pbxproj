@@ -20,6 +20,8 @@
 		DA1A8DEA2553144E00B6724F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1A8DE82553144E00B6724F /* Main.storyboard */; };
 		DA1A8DEC2553144F00B6724F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1A8DEB2553144F00B6724F /* Assets.xcassets */; };
 		DA1A8DEF2553144F00B6724F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1A8DED2553144F00B6724F /* LaunchScreen.storyboard */; };
+		DA2EC7DE2576A80C00506129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2EC7DC2576A80C00506129 /* InfoPlist.strings */; };
+		DA2EC7E12576A80C00506129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2EC7DF2576A80C00506129 /* Localizable.strings */; };
 		DA30DE93256067540013BB1B /* StructCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE92256067540013BB1B /* StructCollectionView.swift */; };
 		DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE95256067640013BB1B /* StructTableNews.swift */; };
 		DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */; };
@@ -46,6 +48,9 @@
 		DA1A8DEB2553144F00B6724F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA1A8DEE2553144F00B6724F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1A8DF02553144F00B6724F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA2EC7D22576A05700506129 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		DA2EC7DD2576A80C00506129 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA2EC7E02576A80C00506129 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA30DE92256067540013BB1B /* StructCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCollectionView.swift; sourceTree = "<group>"; };
 		DA30DE95256067640013BB1B /* StructTableNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTableNews.swift; sourceTree = "<group>"; };
 		DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +152,8 @@
 				DA1A8DEB2553144F00B6724F /* Assets.xcassets */,
 				DA1A8DED2553144F00B6724F /* LaunchScreen.storyboard */,
 				DA1A8DF02553144F00B6724F /* Info.plist */,
+				DA2EC7DF2576A80C00506129 /* Localizable.strings */,
+				DA2EC7DC2576A80C00506129 /* InfoPlist.strings */,
 			);
 			path = CovidNews;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = DA1A8DD62553144E00B6724F;
 			productRefGroup = DA1A8DE02553144E00B6724F /* Products */;
@@ -210,7 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2EC7E12576A80C00506129 /* Localizable.strings in Resources */,
 				DA1A8DEF2553144F00B6724F /* LaunchScreen.storyboard in Resources */,
+				DA2EC7DE2576A80C00506129 /* InfoPlist.strings in Resources */,
 				DA1A8DEC2553144F00B6724F /* Assets.xcassets in Resources */,
 				DA1A8DEA2553144E00B6724F /* Main.storyboard in Resources */,
 			);
@@ -290,6 +300,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA1A8DE92553144E00B6724F /* Base */,
+				DA2EC7D22576A05700506129 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -302,6 +313,22 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		DA2EC7DC2576A80C00506129 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA2EC7DD2576A80C00506129 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA2EC7DF2576A80C00506129 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA2EC7E02576A80C00506129 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -309,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -370,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

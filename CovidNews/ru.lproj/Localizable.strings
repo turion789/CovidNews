@@ -1,0 +1,12 @@
+/* var Infected in cell */
+"Infected: " = "Заболевших: ";
+
+/* Infected in table */
+"Infected: " = "Заболевших: ";
+
+/* var Recovered in cell */
+"Recovered: " = "Выздоровевшие: ";
+
+/* var Recovered in table */
+"Recovered: " = "Выздоровевшие: ";
+

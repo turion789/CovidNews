@@ -80,11 +80,12 @@ class TableViewController: UITableViewController {
             cell.countryLable.text = cas + " / " + casesss[indexPath.row].countryRegion
         }
         
-        cell.confirmLable.text = String("Infected: \(casesss[indexPath.row].confirmed)")
+        //cell.confirmLable.text = String("Infected: \(casesss[indexPath.row].confirmed)")
+        cell.confirmLable.text = NSLocalizedString("Infected: ", comment: " Infected in table") + String("\(casesss[indexPath.row].confirmed)")
         if casesss[indexPath.row].recovered == 0{
             cell.deathLable.text = "N/A"
         }else{
-            cell.deathLable.text = String("Recovered: \(casesss[indexPath.row].recovered)")
+            cell.deathLable.text = NSLocalizedString("Recovered: ", comment: "var Recovered in table") + String("\(casesss[indexPath.row].recovered)")
         }
 
         cell.layer.cornerRadius = 50
@@ -114,10 +115,10 @@ class TableViewController: UITableViewController {
             
             let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
             let detailVC: ViewControllerInTable = segue.destination as! ViewControllerInTable
-            detailVC.confirmedCell += String(casesss[indexPath!.row].confirmed)
+            detailVC.allInfectedPeople += String(casesss[indexPath!.row].confirmed)
             if casesss[indexPath!.row].recovered == 0{
-                detailVC.deathCell += "N/A"
-            }else{detailVC.deathCell += String(casesss[indexPath!.row].recovered)}
+                detailVC.recoveredInCell += "N/A"
+            }else{detailVC.recoveredInCell += String(casesss[indexPath!.row].recovered)}
             detailVC.countryTitleInCell.title = casesss[indexPath!.row].countryRegion
 
          }

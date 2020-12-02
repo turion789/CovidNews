@@ -13,15 +13,15 @@ class ViewControllerInTable: UIViewController {
     @IBOutlet weak var deathLableInCell: UILabel!
     @IBOutlet weak var countryTitleInCell: UINavigationItem!
     
-    var deathCell = "Recovered: "
-    var confirmedCell = "Infected: "
+    var recoveredInCell = NSLocalizedString("Recovered: ", comment: "var Recovered in cell")
+    var allInfectedPeople = NSLocalizedString("Infected: ", comment: "var Infected in cell")
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        confirmedLableInCell.text = String(confirmedCell)
-        deathLableInCell.text = String(deathCell)
+        confirmedLableInCell.text = String(allInfectedPeople)
+        deathLableInCell.text = String(recoveredInCell)
         
     }
 
