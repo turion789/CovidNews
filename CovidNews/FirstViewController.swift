@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 
 class UserModel: NSObject, NSCoding {
@@ -37,8 +38,15 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         let userObject = UserModel(loginName: nameLoginIn)
         UserSettings.userName = nameLoginIn
         UserSettings.userModel = userObject
-       
+        
+        let keychain: Keychain
+        keychain = Keychain()
+        keychain[loginTextField.text!] = passwordTextField.text
+
+        dismiss(animated: true, completion: nil)
     }
+    
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     func textFieldCustom(){
         loginTextField.backgroundColor = .black
         loginTextField.textColor = .white

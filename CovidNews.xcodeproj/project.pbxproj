@@ -25,10 +25,38 @@
 		DA30DE93256067540013BB1B /* StructCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE92256067540013BB1B /* StructCollectionView.swift */; };
 		DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30DE95256067640013BB1B /* StructTableNews.swift */; };
 		DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */; };
+		DA8B03D425793EE00028B232 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B03B325793D1E0028B232 /* UserNotifications.framework */; };
+		DA8B03D525793EE00028B232 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B03B525793D1E0028B232 /* UserNotificationsUI.framework */; };
+		DA8B03D825793EE00028B232 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B03D725793EE00028B232 /* NotificationViewController.swift */; };
+		DA8B03DB25793EE00028B232 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8B03D925793EE00028B232 /* MainInterface.storyboard */; };
+		DA8B03DF25793EE00028B232 /* UserNotificationsLocal.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DA8B03D325793EE00028B232 /* UserNotificationsLocal.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DAA970BC25627A60003879B7 /* SaveUserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA970BB25627A60003879B7 /* SaveUserName.swift */; };
 		DAC5BF4C2565589800991F51 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5BF4B2565589800991F51 /* tabBarViewController.swift */; };
-		DACF4BCE25714F6900610D76 /* SavePassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF4BCD25714F6900610D76 /* SavePassController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA8B03DD25793EE00028B232 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA1A8DD72553144E00B6724F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA8B03D225793EE00028B232;
+			remoteInfo = UserNotificationsLocal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA8B03C425793D1F0028B232 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DA8B03DF25793EE00028B232 /* UserNotificationsLocal.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4EB6C09D83A1F2D0D2B4764C /* Pods-CovidNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidNews.release.xcconfig"; path = "Target Support Files/Pods-CovidNews/Pods-CovidNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,9 +82,15 @@
 		DA30DE92256067540013BB1B /* StructCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCollectionView.swift; sourceTree = "<group>"; };
 		DA30DE95256067640013BB1B /* StructTableNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTableNews.swift; sourceTree = "<group>"; };
 		DA5AB9D32561CD0100E6506F /* DetailNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
+		DA8B039B257932980028B232 /* CovidNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CovidNews.entitlements; sourceTree = "<group>"; };
+		DA8B03B325793D1E0028B232 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		DA8B03B525793D1E0028B232 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		DA8B03D325793EE00028B232 /* UserNotificationsLocal.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UserNotificationsLocal.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8B03D725793EE00028B232 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		DA8B03DA25793EE00028B232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DA8B03DC25793EE00028B232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA970BB25627A60003879B7 /* SaveUserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserName.swift; sourceTree = "<group>"; };
 		DAC5BF4B2565589800991F51 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
-		DACF4BCD25714F6900610D76 /* SavePassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePassController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +99,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				57708B82957C79E4F8F5F5FC /* Pods_CovidNews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA8B03D025793EE00028B232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8B03D525793EE00028B232 /* UserNotificationsUI.framework in Frameworks */,
+				DA8B03D425793EE00028B232 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				869A0815C1C8AC028C6845F3 /* Pods_CovidNews.framework */,
+				DA8B03B325793D1E0028B232 /* UserNotifications.framework */,
+				DA8B03B525793D1E0028B232 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +149,6 @@
 				DA30DE92256067540013BB1B /* StructCollectionView.swift */,
 				DA30DE95256067640013BB1B /* StructTableNews.swift */,
 				DAA970BB25627A60003879B7 /* SaveUserName.swift */,
-				DACF4BCD25714F6900610D76 /* SavePassController.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -123,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A8DE12553144E00B6724F /* CovidNews */,
+				DA8B03D625793EE00028B232 /* UserNotificationsLocal */,
 				DA1A8DE02553144E00B6724F /* Products */,
 				0455F48B58EC2676ED83F487 /* Pods */,
 				1251AB37C1C752206BE8B283 /* Frameworks */,
@@ -133,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A8DDF2553144E00B6724F /* CovidNews.app */,
+				DA8B03D325793EE00028B232 /* UserNotificationsLocal.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +186,7 @@
 		DA1A8DE12553144E00B6724F /* CovidNews */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B039B257932980028B232 /* CovidNews.entitlements */,
 				DA1A8DE22553144E00B6724F /* AppDelegate.swift */,
 				DA1A8DE42553144E00B6724F /* SceneDelegate.swift */,
 				DA1A8DE82553144E00B6724F /* Main.storyboard */,
@@ -158,6 +205,16 @@
 			path = CovidNews;
 			sourceTree = "<group>";
 		};
+		DA8B03D625793EE00028B232 /* UserNotificationsLocal */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B03D725793EE00028B232 /* NotificationViewController.swift */,
+				DA8B03D925793EE00028B232 /* MainInterface.storyboard */,
+				DA8B03DC25793EE00028B232 /* Info.plist */,
+			);
+			path = UserNotificationsLocal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,15 +227,34 @@
 				DA1A8DDC2553144E00B6724F /* Frameworks */,
 				DA1A8DDD2553144E00B6724F /* Resources */,
 				B9E4DE12228BE9949DDF4ADF /* [CP] Embed Pods Frameworks */,
+				DA8B03C425793D1F0028B232 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DA8B03DE25793EE00028B232 /* PBXTargetDependency */,
 			);
 			name = CovidNews;
 			productName = CovidNews;
 			productReference = DA1A8DDF2553144E00B6724F /* CovidNews.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DA8B03D225793EE00028B232 /* UserNotificationsLocal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA8B03E025793EE00028B232 /* Build configuration list for PBXNativeTarget "UserNotificationsLocal" */;
+			buildPhases = (
+				DA8B03CF25793EE00028B232 /* Sources */,
+				DA8B03D025793EE00028B232 /* Frameworks */,
+				DA8B03D125793EE00028B232 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UserNotificationsLocal;
+			productName = UserNotificationsLocal;
+			productReference = DA8B03D325793EE00028B232 /* UserNotificationsLocal.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -186,11 +262,14 @@
 		DA1A8DD72553144E00B6724F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					DA1A8DDE2553144E00B6724F = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					DA8B03D225793EE00028B232 = {
+						CreatedOnToolsVersion = 12.2;
 					};
 				};
 			};
@@ -209,6 +288,7 @@
 			projectRoot = "";
 			targets = (
 				DA1A8DDE2553144E00B6724F /* CovidNews */,
+				DA8B03D225793EE00028B232 /* UserNotificationsLocal */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +303,14 @@
 				DA2EC7DE2576A80C00506129 /* InfoPlist.strings in Resources */,
 				DA1A8DEC2553144F00B6724F /* Assets.xcassets in Resources */,
 				DA1A8DEA2553144E00B6724F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA8B03D125793EE00028B232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8B03DB25793EE00028B232 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +370,6 @@
 				DA174B8E2554277600D7971D /* TableViewController.swift in Sources */,
 				DA5AB9D42561CD0100E6506F /* DetailNewsViewController.swift in Sources */,
 				DA1A8DE32553144E00B6724F /* AppDelegate.swift in Sources */,
-				DACF4BCE25714F6900610D76 /* SavePassController.swift in Sources */,
 				DA30DE96256067640013BB1B /* StructTableNews.swift in Sources */,
 				DA174B7C255415BA00D7971D /* NewsCollectionCell.swift in Sources */,
 				DA174B8B2554275000D7971D /* TableViewCell.swift in Sources */,
@@ -293,7 +380,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA8B03CF25793EE00028B232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8B03D825793EE00028B232 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA8B03DE25793EE00028B232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA8B03D225793EE00028B232 /* UserNotificationsLocal */;
+			targetProxy = DA8B03DD25793EE00028B232 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DA1A8DE82553144E00B6724F /* Main.storyboard */ = {
@@ -327,6 +430,14 @@
 				DA2EC7E02576A80C00506129 /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DA8B03D925793EE00028B232 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA8B03DA25793EE00028B232 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -454,8 +565,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C5EFADA387FFA2CDBFD2EEC /* Pods-CovidNews.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CovidNews/CovidNews.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9JFZQCSP3K;
 				INFOPLIST_FILE = CovidNews/Info.plist;
@@ -465,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = turion789.CovidNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,8 +589,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4EB6C09D83A1F2D0D2B4764C /* Pods-CovidNews.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CovidNews/CovidNews.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9JFZQCSP3K;
 				INFOPLIST_FILE = CovidNews/Info.plist;
@@ -485,6 +603,49 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = turion789.CovidNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA8B03E125793EE00028B232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JFZQCSP3K;
+				INFOPLIST_FILE = UserNotificationsLocal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = turion789.CovidNews.UserNotificationsLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA8B03E225793EE00028B232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JFZQCSP3K;
+				INFOPLIST_FILE = UserNotificationsLocal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = turion789.CovidNews.UserNotificationsLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -507,6 +668,15 @@
 			buildConfigurations = (
 				DA1A8DF42553144F00B6724F /* Debug */,
 				DA1A8DF52553144F00B6724F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA8B03E025793EE00028B232 /* Build configuration list for PBXNativeTarget "UserNotificationsLocal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA8B03E125793EE00028B232 /* Debug */,
+				DA8B03E225793EE00028B232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
