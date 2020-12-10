@@ -42,8 +42,8 @@ class NewsViewController: UIViewController, UICollectionViewDataSource, UICollec
             if ((response.result.value) != nil){
                 let jsondata = JSON(response.result.value!)
                 print(jsondata)
-                if let da = jsondata["articles"].arrayObject{
-                    self.articleArray = da as! [[String : AnyObject]]
+                if let arrayObjectJson = jsondata["articles"].arrayObject{
+                    self.articleArray = arrayObjectJson as! [[String : AnyObject]]
                     
                 }
                 
@@ -64,13 +64,35 @@ class NewsViewController: UIViewController, UICollectionViewDataSource, UICollec
         return articleArray.count
     }
     
-    
+   // "publishedAt":"2020-12-10T13:07:18.6192945Z"
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionCell", for: indexPath) as! NewsCollectionCell
         let iP = articleArray[indexPath.row]
         cell.authorNews.text = iP["author"] as? String
         cell.titleNews.text = iP["title"] as? String
+        
+        
+        
+        let dateFormatter = DateFormatter()
+        let string = iP["publishedAt"] as! String
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        guard let inputDate  = dateFormatter.date(from: string) else { return cell}
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateStyle = .long
+        
+        let stringDate = dateFormatter2.string(from: inputDate)
+        if stringDate == stringDate {cell.datePublishedNews.text = stringDate}
+        
+        
+        
+        
+        
+        
+        
+        
+        
         let queue = DispatchQueue.global(qos: .userInteractive)
         queue.async{
             if let url = URL(string: iP["urlToImage"] as! String){

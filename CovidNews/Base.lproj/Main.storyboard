@@ -139,15 +139,31 @@
                                     <segue destination="DEH-S3-uIQ" kind="unwind" unwindAction="logOutWithSegue:" id="Xxz-CI-xlS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-Y3-5Sk">
+                                <rect key="frame" x="145" y="256" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Noti"/>
+                                <connections>
+                                    <action selector="notifications:" destination="sWd-jA-qvG" eventType="touchUpInside" id="tYT-R8-JQF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRI-5K-f1I">
+                                <rect key="frame" x="112" y="201" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UJ1-iU-mlf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sRI-5K-f1I" firstAttribute="top" secondItem="zxG-Wa-L24" secondAttribute="bottom" constant="22" id="CAv-u0-8IW"/>
                             <constraint firstItem="UJ1-iU-mlf" firstAttribute="bottom" secondItem="R42-dt-v9Q" secondAttribute="bottom" constant="47" id="KB3-xl-zf1"/>
                             <constraint firstItem="zxG-Wa-L24" firstAttribute="top" secondItem="UJ1-iU-mlf" secondAttribute="top" constant="158" id="Ly1-Do-apL"/>
                             <constraint firstItem="zxG-Wa-L24" firstAttribute="leading" secondItem="UJ1-iU-mlf" secondAttribute="leading" constant="92" id="OHb-eQ-UuH"/>
                             <constraint firstItem="R42-dt-v9Q" firstAttribute="leading" secondItem="UJ1-iU-mlf" secondAttribute="leading" constant="20" id="PBV-q5-PFq"/>
+                            <constraint firstItem="sRI-5K-f1I" firstAttribute="leading" secondItem="UJ1-iU-mlf" secondAttribute="leading" constant="112" id="axH-8s-5ca"/>
                             <constraint firstItem="UJ1-iU-mlf" firstAttribute="trailing" secondItem="zxG-Wa-L24" secondAttribute="trailing" constant="92" id="cVS-A9-SNu"/>
+                            <constraint firstItem="UJ1-iU-mlf" firstAttribute="trailing" secondItem="sRI-5K-f1I" secondAttribute="trailing" constant="111" id="l3o-aZ-Wtx"/>
                             <constraint firstItem="UJ1-iU-mlf" firstAttribute="trailing" secondItem="R42-dt-v9Q" secondAttribute="trailing" constant="20" id="sJi-3f-h2W"/>
                         </constraints>
                     </view>
@@ -155,13 +171,14 @@
                     <navigationItem key="navigationItem" id="1dd-eK-n44"/>
                     <connections>
                         <outlet property="customLogOut" destination="R42-dt-v9Q" id="w8P-Cz-suD"/>
+                        <outlet property="textfieldData" destination="sRI-5K-f1I" id="fke-70-n4q"/>
                         <outlet property="userNameLable" destination="zxG-Wa-L24" id="fD2-bP-qYS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pit-cz-4Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="DEH-S3-uIQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2217.7570093457944" y="915.55075593952495"/>
+            <point key="canvasLocation" x="2216.25" y="915"/>
         </scene>
         <!--Cases-->
         <scene sceneID="WiG-NS-Gvj">
@@ -381,7 +398,7 @@
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-8B-OwW">
-                                                    <rect key="frame" x="20" y="121" width="134" height="21"/>
+                                                    <rect key="frame" x="20" y="105" width="134" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="134" id="NRH-qg-w6b"/>
                                                     </constraints>
@@ -389,19 +406,30 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.12.2012" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-Dc-WYV">
+                                                    <rect key="frame" x="0.0" y="128" width="157" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Pd3-8S-EnZ" firstAttribute="leading" secondItem="079-Op-H0N" secondAttribute="leading" constant="8" id="8D5-m8-b8F"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZCM-8B-OwW" secondAttribute="bottom" constant="8" id="Gj6-yn-Ube"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZCM-8B-OwW" secondAttribute="bottom" constant="24" id="Gj6-yn-Ube"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gy2-Dc-WYV" secondAttribute="bottom" constant="8" id="NXH-ey-EBu"/>
+                                                <constraint firstItem="Gy2-Dc-WYV" firstAttribute="top" secondItem="ZCM-8B-OwW" secondAttribute="bottom" constant="2" id="PYE-IF-LeL"/>
                                                 <constraint firstAttribute="trailing" secondItem="Pd3-8S-EnZ" secondAttribute="trailing" constant="3" id="QGK-Jg-ZB5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gy2-Dc-WYV" secondAttribute="trailing" constant="5" id="a4Y-lv-30s"/>
                                                 <constraint firstItem="Pd3-8S-EnZ" firstAttribute="top" secondItem="079-Op-H0N" secondAttribute="top" constant="8" id="gt4-sY-2s1"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZCM-8B-OwW" secondAttribute="trailing" constant="8" id="hv2-EN-kNR"/>
                                                 <constraint firstItem="ZCM-8B-OwW" firstAttribute="leading" secondItem="079-Op-H0N" secondAttribute="leading" constant="20" id="i0s-bC-zE5"/>
+                                                <constraint firstItem="Gy2-Dc-WYV" firstAttribute="leading" secondItem="079-Op-H0N" secondAttribute="leading" id="zTh-Q5-GWH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.097600226420000005" blue="0.0" alpha="0.8980392157" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="authorNews" destination="ZCM-8B-OwW" id="Ocs-DB-AgZ"/>
+                                            <outlet property="datePublishedNews" destination="Gy2-Dc-WYV" id="U6U-Jt-K1v"/>
                                             <outlet property="imageBackground" destination="RxJ-44-7RN" id="MIF-w4-KZk"/>
                                             <outlet property="titleNews" destination="Pd3-8S-EnZ" id="T7L-8h-b7b"/>
                                             <segue destination="khk-Ig-Epn" kind="show" identifier="showWeb" id="2QN-qj-bn9"/>

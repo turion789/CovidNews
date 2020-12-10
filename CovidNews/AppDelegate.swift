@@ -9,120 +9,16 @@ import UIKit
 import UserNotifications
 
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    let notificationCenter = UNUserNotificationCenter.current()
-    
-    
-    func requestAutorization(){
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            print("Permission granted: \(granted)")
-            guard granted else {return}
-            self.getNotificationSetting()
-        }
-    }
-    
-    
-    func getNotificationSetting(){
-        notificationCenter.getNotificationSettings { (settings) in
-            print(settings)
-        }
-    }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let actionIdentifier = response.actionIdentifier
-        let content = response.notification.request.content
-         
-        switch actionIdentifier {
-        case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
-            // Do something
-            completionHandler()
-        case UNNotificationDefaultActionIdentifier: // App was opened from notification
-            // Do something
-            completionHandler()
-        case "com.usernotificationstutorial.reply":
-            if let textResponse = response as? UNTextInputNotificationResponse {
-                let reply = textResponse.userText
-                // Send reply message
-                completionHandler()
-            }
-        case "com.usernotificationstutorial.delete":
-            // Delete message
-            completionHandler()
-        default:
-            completionHandler()
-        }
-    }
-    
-    func scheduleNotification(notificationType: String){
-    
-        
-        
-//        let center = UNUserNotificationCenter.current()
-//
-//            let content = UNMutableNotificationContent()
-//            content.title = "Late wake up call"
-//            content.body = "The early bird catches the worm, but the second mouse gets the cheese."
-//            content.categoryIdentifier = "alarm"
-//            content.userInfo = ["customData": "fizzbuzz"]
-//            content.sound = UNNotificationSound.default
-//
-//            var dateComponents = DateComponents()
-//            dateComponents.hour = 10
-//            dateComponents.minute = 30
-//       // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-//
-//           // let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//            //center.add(request)
-//
-//        let date = Date(timeIntervalSinceNow: 3600)
-//        let triggerWeekly = Calendar.current.dateComponents([.hour, .minute, .second,], from: date)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
-//
-//
-//        let identifier = "Local Notification"
-//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-//
-//        notificationCenter.add(request) { (error) in
-//            if let error = error {
-//                print("Error \(error.localizedDescription)")
-//            }
-//        }
-//        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-//        let deleteAction = UNNotificationAction(identifier: "Delete", title: "Delete", options: [.destructive])
-//        let userActions = "User Actions"
-//        let category = UNNotificationCategory(identifier: userActions, actions: [snoozeAction, deleteAction], intentIdentifiers: [], options: [])
-//        notificationCenter.setNotificationCategories([category])
-//        content.categoryIdentifier = userActions
-        
-        // 1
-        var dateComponents = DateComponents()
-        dateComponents.hour = 14
-        dateComponents.minute = 2
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-        // 2
-        let content = UNMutableNotificationContent()
-        content.title = "Daily reminder"
-        content.body = "Enjoy your day!"
-
-        let randomIdentifier = UUID().uuidString
-        let request = UNNotificationRequest(identifier: randomIdentifier, content: content, trigger: trigger)
-
-        // 3
-        UNUserNotificationCenter.current().add(request) { error in
-          if error != nil {
-            print("something went wrong")
-          }
-        }
-        
-    }
-
+    let notifications = Notifications()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        requestAutorization()
+        notifications.notificationCenter.delegate = notifications
+        notifications.userRequest()
+        
         return true
     }
 
@@ -139,8 +35,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    }
+
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
 
